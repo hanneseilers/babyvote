@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baby Vote</title>
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="d-flex justify-content-center">
+    <h2>What will it be?</h2>
+</div>
+<div class="d-flex justify-content-center" id="vote">
+    <div class="p-2 w-25">
+        <button class="btn btn-secondary p-5 w-100 boy" id="boy">
+            <b><i class="fa-solid fa-mars"></i> BOY</b>
+        </button>
+    </div>
+    <div class="p-2 w-25">
+        <button class="btn btn-secondary p-5 w-100 girl" id="girl">
+            <b><i class="fa-solid fa-venus"></i> GIRL</b>
+        </button>
+    </div>
+</div>
+
+<div id="results"></div>
+
+<script src="functions.js"></script>
+<script>
+
+    if (hasVoted()) {
+        // user has already voted, remove voting option
+        // todo uncomment
+        removeVote()
+    } else {
+        document.getElementById('boy').addEventListener('click', () => vote('boy'))
+        document.getElementById('girl').addEventListener('click', () => vote('girl'))
+    }
+
+    // Initial load of results
+    vote('')
+</script>
+</body>
+</html>
