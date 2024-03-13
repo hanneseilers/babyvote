@@ -10,9 +10,13 @@ function vote(gender) {
         .then(response => response.json())
         .then(data => {
             console.log(data)
-            removeVote()
             if (data.toString().length > 0) {
                 updateBarometer(data)
+
+                if (gender.toString().length > 0){
+                    removeVote()
+                }
+
             }
         })
         .catch(error => console.log(error))
