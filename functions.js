@@ -1,4 +1,5 @@
 function vote(gender) {
+    console.log("sending vote '" + gender + "'")
     fetch('vote.php', {
         method: 'POST',
         headers: {
@@ -9,6 +10,7 @@ function vote(gender) {
         .then(response => response.json())
         .then(data => {
             console.log(data)
+            removeVote()
             if (data.toString().length > 0) {
                 updateBarometer(data)
             }
