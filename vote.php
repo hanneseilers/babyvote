@@ -6,14 +6,7 @@ $cookieName = 'babyVote_123456_hasVoted';
 // Check if a vote has been submitted
 if (isset($_POST['vote']) && !isset($_COOKIE[$cookieName])) {
     $vote = $_POST['vote'];
-
-    // Read the current votes from the file
-    if (file_exists($filename)) {
-        $content = file_get_contents($filename);
-        $votes = json_decode($content, true);
-    } else {
-        $votes = ['boy' => 0, 'girl' => 0];
-    }
+    $votes = getVotes($filename);
 
     // Count the vote
     if ($vote === 'boy') {
@@ -35,4 +28,14 @@ if (file_exists($filename)) {
     echo $content;
 } else {
     echo json_encode(['boy' => 0, 'girl' => 0]);
+}
+
+function getVotes($filename){
+    // Read the current votes from the file
+    $votes = ['boy' => 0, 'girl' => 0];
+    if (file_exists($filename)) {
+        $content = file_get_contents($filename);
+        $votes = json_decode($content, true);
+    }
+    return $votes;
 }

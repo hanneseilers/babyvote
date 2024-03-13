@@ -13,7 +13,7 @@ function vote(gender) {
                 updateBarometer(data)
             }
         })
-        .catch(error => console.error('Error:', error))
+        .catch(error => console.log(error))
 }
 
 /**
