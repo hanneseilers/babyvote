@@ -1,6 +1,5 @@
 function vote(gender) {
     // Check if the user has already voted
-    console.log(gender)
     if (hasVoted()) {
         //alert("You have already voted.")
         //return; // Stops the function if the user has already voted
