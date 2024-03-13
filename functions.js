@@ -1,10 +1,4 @@
 function vote(gender) {
-    // Check if the user has already voted
-    if (hasVoted()) {
-        alert("You have already voted.")
-        return; // Stops the function if the user has already voted
-    }
-
     fetch('vote.php', {
         method: 'POST',
         headers: {
