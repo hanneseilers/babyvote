@@ -46,12 +46,12 @@ function updateBarometer(votes) {
     resultsDiv.innerHTML = `
                 <div class="barometer text-white">
                     <div class="p-3 align-content-center boy" style="width: ${boyWidth}%">
-                        <b><i class="fa-solid fa-mars"></i></b>
+                        <b><i class="fa-solid fa-mars"></i> ${votes.boy}</b>
                     </div>
                 </div>
                 <div class="barometer text-white">
                     <div class="p-3 align-content-center girl" style="width: ${girlWidth}%">
-                        <b><i class="fa-solid fa-venus"></i></b>
+                        <b><i class="fa-solid fa-venus"></i> ${votes.girl}</b>
                     </div>
                 </div>
             `;
