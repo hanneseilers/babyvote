@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Baby Vote</title>
+    <title lang>page-title</title>
     <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/fontawesome/css/solid.min.css">
@@ -10,34 +10,39 @@
 </head>
 <body class="bg-dark text-white">
 <div class="d-flex justify-content-center">
-    <h2>What is ist?</h2>
+    <h2 lang>header</h2>
 </div>
 <div class="d-flex justify-content-center" id="vote">
     <div class="p-2 w-25">
         <button class="btn btn-secondary p-5 w-100 boy" id="boy">
-            <b><i class="fa-solid fa-mars"></i> BOY</b>
+            <b><i class="fa-solid fa-mars"></i> <span lang>BOY</span></b>
         </button>
     </div>
     <div class="p-2 w-25">
         <button class="btn btn-secondary p-5 w-100 girl" id="girl">
-            <b><i class="fa-solid fa-venus"></i> GIRL</b>
+            <b><i class="fa-solid fa-venus"></i> <span lang>GIRL</span></b>
         </button>
     </div>
 </div>
 
 <div id="results"></div>
 
-<script src="assets/js/functions.js"></script>
+<script src="functions.js"></script>
+<script src="language.js"></script>
 <script>
-
     if (hasVoted()) {
         // user has already voted, remove voting option
         console.log("user has already voted!")
-        removeVote()
+        //removeVote()
     } else {
         document.getElementById('boy').addEventListener('click', () => vote('boy'))
         document.getElementById('girl').addEventListener('click', () => vote('girl'))
     }
+
+    // Fetch language data and replace content when page loads
+    window.onload = function() {
+        fetchLanguageData(replaceContent);
+    };
 
     // Initial load of results
     vote('')
