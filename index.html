@@ -33,7 +33,7 @@
     if (hasVoted()) {
         // user has already voted, remove voting option
         console.log("user has already voted!")
-        //removeVote()
+        removeVote()
     } else {
         document.getElementById('boy').addEventListener('click', () => vote('boy'))
         document.getElementById('girl').addEventListener('click', () => vote('girl'))
