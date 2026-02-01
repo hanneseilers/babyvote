@@ -49,7 +49,7 @@ Modify the `lang` attribute in `index.html`:
 
 Change the `$cookieName` variable in `vote.php` to customize the cookie identifier.
 
-## Files Structure
+## File Structure
 
 - `index.html` - Main HTML page
 - `vote.php` - Backend voting logic and vote storage
